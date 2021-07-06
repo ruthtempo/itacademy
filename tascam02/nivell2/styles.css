@@ -1,0 +1,270 @@
+body{
+  height:100vh;
+  width: 100%;
+  margin:0;
+  font-family: 'Nunito', sans-serif;
+  font-size:14px;
+
+}
+
+body p{
+  margin:0;
+  padding:3px;
+  }
+
+.wrapper{
+  width:60%;
+  height:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+header{
+  height:20%;
+  }
+
+.logo-wrapper{
+  background-color:rgb(214, 250, 211);
+  height:70%; 
+  background-image: url(images/header.jpg);
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.logo{
+  float:left;
+  max-width:30%;
+  margin:2%;
+  background-color:grey;
+  height:60%;
+  border-radius: 8px;
+  object-fit:fill;
+}
+
+.social-icons{
+  position:static;
+  float:right;
+  padding:8px;
+  height:50%;
+  width:40%;
+  margin:2%;
+}
+
+.social-icons li{
+  display:inline-block;
+  float: right;
+  margin:5px;
+  background-color:white;
+  height:50px;;
+  width:50px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.facebook:hover, .facebook:focus {
+  color: #3b5998;
+  box-shadow: 0 0 24px 0 #3b5998;
+}
+
+.instagram:hover, .instagram:focus {
+  color: #3b5998;
+  box-shadow: 0 0 24px 0 #3b5998;
+}
+
+.youtube:hover, .youtube:focus {
+  color: #3b5998;
+  box-shadow: 0 0 24px 0 #3b5998;
+}
+
+.fa{
+  font-size:30px!important;
+  color:burlywood;
+}
+
+
+nav ul{
+  height:20%;
+  margin:0;
+  padding:0;
+  margin-top:10px;
+  background-color: rgb(44, 34, 51);
+}
+
+nav li{
+  width:19.6%;
+  height:100%;
+  float:left;
+  list-style-type: none;
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-left:0.5%;
+  background-color:papayawhip;
+  text-align: center;
+}
+
+li a{
+  padding:10px;
+}
+
+nav li:hover {
+  background-color:floralwhite;
+}
+
+nav li:first-child{
+  margin-left:0;
+}
+
+
+main{
+  height:70%;
+}
+
+
+.rectangle-boxes{
+  width:100%;
+  height:30%;
+  margin-bottom: 2%;
+}
+
+.box:first-child{
+  margin-left:0;
+}
+
+.box {
+  float:left;
+  width:32.6%;
+  height:100%;
+  margin-left:1.1%;
+  background-color: papayawhip;
+}
+
+h4{
+  margin:0;
+}
+
+.box:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.pic-left{
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    height: 50%;
+}
+
+.container{
+  height:25%;
+  text-align:center;
+  padding:15px;
+}
+
+.box-button{
+  background-color: sandybrown;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor:pointer;
+}
+
+.box-button:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+#section2{
+  width:100%;
+  height:65%;
+}
+
+#section2 p{
+ font-size:1.25vh;
+}
+
+.central-content{
+  background-color:rgb(56, 50, 50);
+  float:left;
+  width:50%;
+  height:100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("images/box1.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.central-article{
+  background-color: 
+  floralwhite;
+  position: relative;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:45%;
+}
+.content-left{
+  float:left;
+  background-color:rgb(179, 170, 172);
+  height:100%;
+  width:24%;
+  float:left;
+  background-image: url("images/box2.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  margin-right: 1%;
+}
+
+
+.left-article{
+  background-color: 
+  floralwhite;
+  position: relative;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:45%;
+}
+
+
+
+.content-right{
+  background-color:floralwhite;
+  float:left;
+  height:100%;
+  width:24%;
+  margin-left:1%;
+  background-image: url("images/box3.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.right-article{
+  background-color: 
+  floralwhite;
+  position: relative;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:45%;
+}
+
+footer{
+  width:100%;
+  height:10%;
+  background-color: papayawhip;
+  
+}
+
+footer p{
+  text-align: center;
+  padding-top:2%;
+}

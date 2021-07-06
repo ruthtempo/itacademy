@@ -1,0 +1,136 @@
+body{
+  height:100vh;
+  width: 100%;
+  margin:0;
+}
+
+.wrapper{
+  width:60%;
+  height:100%;
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+header{
+  height:20%;
+  
+  }
+
+  
+.logo-wrapper{
+  background-color:rgb(78, 73, 72);
+  height:60%;
+}
+
+.logo{
+  float:left;
+  width:20%;
+  margin:2%;
+  background-color:grey;
+  height:50%;
+}
+
+
+.bolitas{
+  position:static;
+  float:right;
+  padding:8px;
+  height:50%;
+  width:20%;
+  margin:2%;
+}
+
+.bolitas div{
+  display:inline-block;
+  float:right;
+  margin:5px;
+  background-color:grey;
+  height:30px;;
+  width:30px;
+  border-radius: 50%;;
+}
+
+
+nav ul{
+  height:20%;
+  margin:0;
+  padding:0;
+  margin-top:10px;
+  background-color: indigo;
+}
+
+nav li{
+  width:19.6%;
+  height:100%;
+  float:left;
+  list-style-type: none;
+  padding-top:5%;
+  margin-left:0.5%;
+  background-color:grey;
+}
+
+nav li:first-child{
+  margin-left:0;
+}
+
+main{
+  height:70%;
+}
+
+
+.rectangle-boxes{
+  width:100%;
+  height:25%;
+  margin-bottom: 2%;
+}
+
+.box:first-child{
+  margin-left:0;
+}
+
+.box {
+  display:inline;
+  float:left;
+  width:32.6%;
+  height:100%;
+  margin-left:1.1%;
+
+  background-color: grey;
+}
+
+#section2{
+  width:100%;
+  height:70%;
+   
+}
+
+.central-article{
+  background-color:rgb(56, 50, 50);
+  float:left;
+  width:50%;
+  height:100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-left{
+  float:left;
+  background-color:rgb(179, 170, 172);
+  height:100%;
+  width:25%;
+  float:left;
+}
+
+.content-right{
+  background-color:grey;
+  float:left;
+  height:100%;
+  width:25%;
+}
+
+footer{
+  width:100%;
+  height:10%;
+  background-color: rgb(56, 50, 50);
+}
