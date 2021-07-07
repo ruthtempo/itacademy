@@ -127,9 +127,9 @@ footer{
     }
 
 
+/* responsive for tablets */
 
-
- @media all and (max-width: 800px) { 
+ @media all and (min-width: 768px) and (max-width: 1024px) { 
     header{
         flex-direction: column;
         flex-wrap: wrap;
@@ -161,7 +161,7 @@ footer{
 }
 
 
-
+/* responsive for phone */
   
   @media (min-width: 481px) and (max-width: 767px) {
   
@@ -190,10 +190,6 @@ footer{
     
   }
   
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
 
 
   
