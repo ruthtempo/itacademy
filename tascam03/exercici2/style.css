@@ -154,6 +154,9 @@ footer{
         max-height: 45%;
         justify-content:center;
     }
+    .main-items4{
+        min-height:20%;
+    }
     .footer-box{
         width:75%
     }
@@ -163,7 +166,7 @@ footer{
 
 /* responsive for phone */
   
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media (min-width: 100px) and (max-width: 767px) {
   
     header{
         flex-direction: column;
@@ -175,8 +178,15 @@ footer{
     .header-container2{
         width:75%;
     }
-    main{
+    main{        
         flex-direction: column;
+        
+    }
+    .main-container1{
+        width:75%;
+        display: flex;
+        justify-content:space-around;
+        
     }
     .main-container2{
         width:75%;
