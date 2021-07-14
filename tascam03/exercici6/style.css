@@ -236,7 +236,7 @@ header {
   }
    
 
-  @media (min-width: 280px) and (max-width: 480px) {
+  @media (min-width: 200px) and (max-width: 480px) {
     header{
         flex-direction: column;
         flex-basis:auto;
