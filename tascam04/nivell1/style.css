@@ -32,14 +32,14 @@ body{
     {
         top: 500px;
         left: 150px;
-        transform: rotate(360deg) scaleY(1) scaleX(1);
-    }  
+        transform: rotate(360deg);
+    }    
     65%
     {
         top: 50px;
         left: 400px;
         transform: rotate(180deg);
-    }
+    }    
     95%
     {
         top: 480px;
