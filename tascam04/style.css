@@ -1,0 +1,56 @@
+body{
+    height:100vh;
+    padding:0;
+    margin:0;
+}
+
+.border{
+    position:relative;
+    width:800px;
+    height:600px;
+    border:2px solid blue;
+}
+
+.pelota{
+    position:absolute;
+    width:100px;
+    border-radius: 50%;
+    /* nom animació per al keyframe i la durada de l'animació */
+    animation:bounce 5s linear infinite alternate;
+}
+
+
+@keyframes bounce
+{
+    0%
+    {
+        top:50px;
+        left: 0%;
+        transform: rotate(0deg);
+    }    
+    25%
+    {
+        top: 600px;
+        left: 150px;
+        transform: rotate(360deg);
+    }    
+    50%
+    {
+        top: 50px;
+        left: 400px;
+        transform: rotate(0deg);
+    }    
+    90%
+    {
+        top: 500px;
+        left: 800px;
+        transform: rotate(360deg);
+    }    
+    100%
+    {
+        top: 600px;
+        left: 700px;
+        transform: rotate(0deg);
+    }
+   
+}
