@@ -1,0 +1,34 @@
+body{
+    height:100vh;
+    
+}
+.grid-container{
+    display:inline-grid;
+    height:100%;
+    width:100%;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows:1fr;
+    grid-gap:5px;
+    text-align: center;
+    color:white;
+    font-size:40px;
+}
+
+.it{
+    background: #244F75;
+}
+.a{
+    background: #60BFBF;
+
+}
+.ca{
+    background: #8C4B7E;
+}
+.de{
+    background: #F8BB44;
+
+}
+.my{
+    background: #F24B4B;
+
+}

@@ -90,28 +90,6 @@ img{
     }    
 
    
-    /* 35%
-    {
-        top: 500px;
-        transform: rotate(360deg);
-        transition-timing-function:ease-out; 
-    
-    } 
-    
-    65%
-    {
-        top: 50px;
-        transform: rotate(180deg);
-        transition-timing-function:ease-in; 
-    }
-    
-    95%
-    {
-        top: 480px;
-        transform: rotate(45deg);
-        transition-timing-function:ease-out; 
-    }   
-    */  
     100%
     {
         transform:translateY(500px);
