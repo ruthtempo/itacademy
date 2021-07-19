@@ -27,7 +27,7 @@ body{
     {
         top:50px;
         left: 0%;
-        transform: rotate(0deg);
+        transform: rotate(0deg) ;
         transition-timing-function:ease-in; 
         
     }    
@@ -35,7 +35,7 @@ body{
     {
         top: 500px;
         left: 150px;
-        transform: rotate(360deg);
+        transform: rotate(360deg)scale(1,1);
         transition-timing-function:ease-out; 
     
     } 
