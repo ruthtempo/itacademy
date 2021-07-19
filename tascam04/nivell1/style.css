@@ -17,6 +17,7 @@ body{
     border-radius: 50%;
     /* nom animació per al keyframe i la durada de l'animació */
     animation:bounce 2.5s linear infinite alternate;
+    
 }
 
 
@@ -27,24 +28,31 @@ body{
         top:50px;
         left: 0%;
         transform: rotate(0deg);
+        transition-timing-function:ease-in; 
+        
     }    
     35%
     {
         top: 500px;
         left: 150px;
         transform: rotate(360deg);
-    }    
+        transition-timing-function:ease-out; 
+    
+    } 
+    
     65%
     {
         top: 50px;
         left: 400px;
         transform: rotate(180deg);
-    }    
+        transition-timing-function:ease-in; 
+    }
     95%
     {
         top: 480px;
         left: 700px;
         transform: rotate(45deg);
+        transition-timing-function:ease-out; 
     }    
     100%
     {

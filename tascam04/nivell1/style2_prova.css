@@ -1,0 +1,111 @@
+body{
+    height:100vh;
+    padding:0;
+    margin:0;
+}
+
+.border{
+    position:relative;
+    width:800px;
+    height:600px;
+    border:2px solid blue;
+}
+
+
+
+
+.pelota{
+    animation-name:bounceY;
+    animation-duration:2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.pelota2{
+    position:absolute;
+    width:100px;
+    border-radius: 50%;
+    animation-name:bounceX;
+    animation-duration:2s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+   
+}
+
+
+
+
+@keyframes bounceX{
+
+    0%
+    { 
+        left: 0%;
+        transform: rotate(0deg);
+        
+    }    
+    /* 35%
+    {
+        
+        left: 150px;
+        transform: rotate(360deg);
+        transition-timing-function:ease-out; 
+    
+    } 
+    
+    65%
+    {
+        left: 400px;
+        transform: rotate(180deg);
+        transition-timing-function:ease-in; 
+    }
+    95%
+    {
+      
+        left: 700px;
+        transform: rotate(45deg);
+        transition-timing-function:ease-out; 
+    }     */
+    100%
+    {
+        left: 680px;
+        transform: rotate(0deg);
+    }
+
+}
+
+@keyframes bounceY{
+
+    0%
+    {
+        top:50px;
+    }    
+    /* 35%
+    {
+        top: 500px;
+        transform: rotate(360deg);
+        transition-timing-function:ease-out; 
+    
+    } 
+    
+    65%
+    {
+        top: 50px;
+        transform: rotate(180deg);
+        transition-timing-function:ease-in; 
+    }
+    95%
+    {
+        top: 480px;
+        transform: rotate(45deg);
+        transition-timing-function:ease-out; 
+    }     */
+    100%
+    {
+        top: 500px;
+       
+    }
+
+}
+
