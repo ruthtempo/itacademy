@@ -96,31 +96,34 @@ body {
   opacity: 0.2;
 }
 
-/* strips 1-5: nth-child 1-5 */
 .strip:nth-child(1) .strip_content {
   background-color: #244f75;
   animation-name: strip--u4rx9pe;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
 }
+
 .strip:nth-child(2) .strip_content {
   background-color: #60bfbf;
   animation-name: strip--u4rx9pg;
   animation-duration: 0.8s;
   animation-timing-function: ease-out;
 }
+
 .strip:nth-child(3) .strip_content {
   background-color: #8c4b7e;
   animation-name: strip--u4rx9q8;
   animation-duration: 0.7s;
   animation-timing-function: ease-out;
 }
+
 .strip:nth-child(4) .strip_content {
   background-color: #f8bb44;
   animation-name: strip--u4rx9qn;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
+
 .strip:nth-child(5) .strip_content {
   background-color: #f24b4b;
   animation-name: strip--u4rx9r0;

@@ -98,40 +98,17 @@ $h1: white;
   }
 }
 
-/* strips 1-5: nth-child 1-5 */
-.strip {
-  &:nth-child(1) .strip_content {
-    background-color: #244f75;
-    animation-name: strip--u4rx9pe;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
-  }
+// "for" loop with variables
+$backgroundcolor: #244f75, #60bfbf, #8c4b7e, #f8bb44, #f24b4b;
+$animation: strip--u4rx9pe, strip--u4rx9pg, strip--u4rx9q8, strip--u4rx9qn,
+  strip--u4rx9r0;
+$duration: 0.5s, 0.8s, 0.7s, 1s, 1.1s;
 
-  &:nth-child(2) .strip_content {
-    background-color: #60bfbf;
-    animation-name: strip--u4rx9pg;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-out;
-  }
-
-  &:nth-child(3) .strip_content {
-    background-color: #8c4b7e;
-    animation-name: strip--u4rx9q8;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-out;
-  }
-
-  &:nth-child(4) .strip_content {
-    background-color: #f8bb44;
-    animation-name: strip--u4rx9qn;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-  }
-
-  &:nth-child(5) .strip_content {
-    background-color: #f24b4b;
-    animation-name: strip--u4rx9r0;
-    animation-duration: 1.1s;
+@for $i from 1 through 5 {
+  .strip:nth-child(#{$i}) .strip_content {
+    background-color: nth($backgroundcolor, $i);
+    animation-name: nth($animation, $i);
+    animation-duration: nth($duration, $i);
     animation-timing-function: ease-out;
   }
 }
