@@ -1,0 +1,21 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+$primary: #d200d9;
+$danger: #d3ff36;
+$secondary:#5ebd05b0;
+$success:#62d900;
+$warning:#FFA07A;
+$info: #9FE2BF;
+$light: #CCCCFF;
+$dark: #884EA0;
+$muted: #1ABC9C;
+$white: #F7F9F9;
+$black: #273746;
+
+@import "../bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
