@@ -1,0 +1,9 @@
+body {
+  height: 100vh;
+}
+
+.calculadora {
+  margin-top: 3%;
+  width: 30%;
+  padding: 10px;
+}
