@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body style="height:100vh">
+
+    <div class="container">
+
+        <h1>Funcions lletres</h1>
+
+        <div class="input-group">
+            <span class="input-group-text">Nom i Cognom</span>
+            <input type="text" aria-label="First name" placeholder="Nom" id="nom" class="form-control">
+            <input type="text" aria-label="Last name" placeholder="Cognom" id="cognom" class="form-control">
+
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary" id="function1button">Funcio1</button>
+                <button type="button" class="btn btn-outline-primary" id="function2button">Funcio2</button>
+                <button type="button" class="btn btn-outline-primary" id="function3button">Funcio3</button>
+                <button type="button" class="btn btn-outline-primary" id="function4button">Funcio4</button>
+            </div>
+
+            <div>
+                <input class="btn btn-primary" type="reset" value="Reset" id="resetbutton">
+            </div>
+        </div>
+        <div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" readonly
+                    style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Output</label>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Nivell 3
+
+        // boto 1
+
+        //input name and/or last name 
+        //save input as array of letters?????
+        //click button  to execute function 1 on input
+        // get input from name and last name
+        // return result in text area
+
+
+        document.getElementById("function1button").addEventListener("click", function () {
+            document.getElementById("floatingTextarea2").innerHTML = "";
+            let name = document.getElementById("nom").value;
+            let newName = name.split("")
+            // let lastName= document.getElementById("cognom").value;
+            // console.log(name, lastName) "TEST"
+            document.getElementById("floatingTextarea2").innerHTML = newName;
+
+        });
+
+        // boto 2
+
+        document.getElementById("function2button").addEventListener("click", function () {
+            document.getElementById("floatingTextarea2").innerHTML = "";
+            let name = document.getElementById("nom").value;
+            let newName = name.split("")
+
+            newName.forEach(function logLetter(element) {
+                const vowels = ["A", "E", "I", "O", "U"]
+                const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+
+                if (vowels.includes(element.toUpperCase())) {
+                    document.getElementById("floatingTextarea2").innerHTML += "he trobat la vocal: ".concat(element).concat("\n");
+                } else if (numbers.includes(element)) {
+                    document.getElementById("floatingTextarea2").innerHTML += "els noms de persones no contenen el núm: ".concat(element).concat("\n");
+                } else {
+                    document.getElementById("floatingTextarea2").innerHTML += "he trobat la consonant: ".concat(element).concat("\n");
+                }
+            });
+        });
+
+        // boto 3 
+
+        document.getElementById("function3button").addEventListener("click", function () {
+            document.getElementById("floatingTextarea2").innerHTML = "";
+            let name = document.getElementById("nom").value;
+            let lastName = document.getElementById("cognom").value;
+
+            let newName = name.concat(lastName).split("")
+            const letterList = new Map()
+
+            newName.forEach(function (letter) {
+                if (letterList.has(letter)) {
+                    const oldValue = letterList.get(letter)
+                    //     if element is in the list, then increase counter
+                    letterList.set(letter, oldValue + 1)
+                } else {
+                    //  else add element to list
+                    letterList.set(letter, 1)
+                }
+            })
+            letterList.forEach(function (entry, key) {
+
+                document.getElementById("floatingTextarea2").innerHTML += `${key}:${entry}`.concat("\n");
+
+            });
+
+        });
+
+        // boto 4
+
+
+        document.getElementById("function4button").addEventListener("click", function () {
+            document.getElementById("floatingTextarea2").innerHTML = "";
+            let name = document.getElementById("nom").value;
+            let lastName = document.getElementById("cognom").value;
+            let fullName = name.concat(lastName);
+            let nomArr = fullName.split("")
+
+
+            nomArr.splice(name.length, 0, " ")
+
+            document.getElementById("floatingTextarea2").innerHTML = nomArr;
+
+        });
+
+        // funcio reset
+        document.getElementById("resetbutton").addEventListener("click", function () {
+
+            document.getElementById("floatingTextarea2").innerHTML = "";
+            document.getElementById("nom").value = "";
+            document.getElementById("cognom").value = "";
+
+            console.log("hola", document.getElementById("floatingTextarea2"))
+        });
+
+
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
