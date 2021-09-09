@@ -95,8 +95,8 @@
                                 </div>
                             </div>
 
-                            <select class="form-select mb-3" aria-label="Default select example" id="registerProvince">
-                                <option selected>Select your Province</option>
+                            <select class="form-select mb-3 " aria-label="Default select example" id="registerProvince">
+                                <option selected disabled value="">Select your Province</option>
                                 <option value="1">Barcelona</option>
                                 <option value="2">Masnou</option>
                                 <option value="3">Mataró</option>
@@ -106,6 +106,9 @@
                                 <label for="registerEmail" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="registerEmail"
                                     aria-describedby="emailHelp">
+                                <div class="invalid-feedback">
+                                    Please enter a valid e-mail address
+                                </div>
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
                                 </div>
                             </div>
@@ -113,7 +116,8 @@
                                 <label for="registerPassword" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="registerPassword">
                                 <div class="invalid-feedback">
-                                    min 8 characters /must include at least 1 uppercase, 1 lowercase, 1 number
+                                    Choose a password with min. 8 characters with at least 1 uppercase, 1 lowercase & 1
+                                    number
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -128,34 +132,31 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            id="registerButton">Register</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- MODAL després de REGISTER
+        <!-- MODAL SUCCESS REGISTRATION-->
 
         <div class="modal" tabindex="-1" id="sucessfulRegistration">
             <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Campos validados correctamente</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Campos validados correctamente</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                  <h3>Nombre:</h3>
-                  <h3>Apellidos:</h3>
-                  <h3>Provincia:</h3>
-                  <h3>Email:</h3>
-                  <h3>Password:</h3>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-              </div>
             </div>
-          </div> -->
+        </div>
 
     </div>
     <script>
@@ -175,6 +176,7 @@
             checkIfEmpty("registerEmail")
             checkIfEmpty("registerPassword")
             checkIfEmpty("repeatPassword")
+            checkIfEmail("registerEmail")
             checkIfPassword("registerPassword")
 
 
@@ -236,21 +238,42 @@
             }
         }
 
-        // TASCA Nivell 3 
+        // TASCA Nivell 3
 
-        // function displayInputs{
+        document.getElementById("registerButton").addEventListener("click", function () {
+            let savedEmail = [];
+            let savedPassword = [];
+
+            const password = document.getElementById("registerPassword").value
+            const email = document.getElementById("registerEmail").value
+
+            if (!document.querySelector("form .is-invalid")) {
+                savedEmail.push(email)
+                savedPassword.push(password)
+
+                // HIDE CURRENT MODAL
+                const registerModal = document.querySelector('#ModalRegister');
+                const modalReg = bootstrap.Modal.getInstance(registerModal);
+                modalReg.hide();
+
+                // SHOW NEW MODAL
+                var myModal = new bootstrap.Modal(document.getElementById('sucessfulRegistration'), {
+                    keyboard: false
+                })
+                var modalToggle = document.getElementById('sucessfulRegistration') // relatedTarget
+                myModal.show(modalToggle)
+            }
+
+            console.log(savedEmail)
+            console.log(savedPassword)
+        });
 
 
-        //     const userData= {
-        //         "email": "",
-        //         "password":""
-        //     }
 
-
-        // }
         //if ALL of the inputs are NOT invalid, THEN push in EMPTY array
         //input must be pushed into empty object once validated (onclick)
         //saved info must be displayed in new Modal
+        //info must be remembered for login
 
     </script>
     <!-- 
