@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Form Validation</h1>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLogin">
+            Log In
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
+                                <div class="invalid-feedback">
+                                    Please enter a valid e-mail address.
+                                </div>
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                            </div>
+                            <!-- <button type="submit" class="btn btn-primary mb-3" id="submitLogin">Log in</button> -->
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="loginButton">Log In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalRegister">
+            Register
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ModalRegister" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Register form -->
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="First name"
+                                        aria-label="First name" id="registerName">
+                                    <div class="invalid-feedback">
+                                        Name required
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Last name"
+                                        aria-label="Last name" id="registerLastName">
+                                    <div class="invalid-feedback">
+                                        Last Name required
+                                    </div>
+                                </div>
+                            </div>
+
+                            <select class="form-select mb-3" aria-label="Default select example" id="registerProvince">
+                                <option selected>Select your Province</option>
+                                <option value="1">Barcelona</option>
+                                <option value="2">Masnou</option>
+                                <option value="3">Mataró</option>
+                                <option value="3">Girona</option>
+                            </select>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="registerEmail"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="registerPassword">
+                                <div class="invalid-feedback">
+                                    min 8 characters /must include at least 1 uppercase, 1 lowercase, 1 number
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="repeatPassword" class="form-label">Repeat Password</label>
+                                <input type="password" class="form-control" id="repeatPassword">
+                                <div class="invalid-feedback">
+                                    The password does not match
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL després de REGISTER
+
+        <div class="modal" tabindex="-1" id="sucessfulRegistration">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Campos validados correctamente</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h3>Nombre:</h3>
+                  <h3>Apellidos:</h3>
+                  <h3>Provincia:</h3>
+                  <h3>Email:</h3>
+                  <h3>Password:</h3>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+    </div>
+    <script>
+
+        document.getElementById("loginButton").addEventListener("click", function () {
+
+            checkIfEmpty("loginEmail")
+            checkIfEmpty("loginPassword")
+            checkIfEmail("loginEmail")
+            checkIfPassword("loginPassword")
+        });
+
+        document.getElementById("registerButton").addEventListener("click", function () {
+            checkIfEmpty("registerName")
+            checkIfEmpty("registerLastName")
+            checkIfEmpty("registerProvince")
+            checkIfEmpty("registerEmail")
+            checkIfEmpty("registerPassword")
+            checkIfEmpty("repeatPassword")
+            checkIfPassword("registerPassword")
+
+
+            function validatePassword() {
+                let password = document.getElementById("registerPassword").value;
+                let confirmPassword = document.getElementById("repeatPassword").value;
+
+                if (password != confirmPassword) {
+                    document.getElementById("repeatPassword").classList.add("is-invalid")
+
+                } else if (password === confirmPassword) {
+                    document.getElementById("repeatPassword").classList.remove("is-invalid")
+
+                }
+            }
+
+            validatePassword();
+        });
+
+        function checkIfEmpty(id) {
+
+            let input = document.getElementById(id)
+
+            if (input.value === "") {
+                document.getElementById(id).classList.add("is-invalid")
+            } else {
+                document.getElementById(id).classList.remove("is-invalid")
+            }
+
+        };
+
+        function checkIfEmail(id) {
+            // type regex, not string
+            let regex = /^[\w\d]+@([\w]+\.)[\w]{2,4}$/gi;
+            // type html element
+            let input = document.getElementById(id);
+
+            if (!regex.test(input.value)) {
+                document.getElementById(id).classList.add("is-invalid")
+            } else {
+                document.getElementById(id).classList.remove("is-invalid")
+            }
+
+        }
+
+        // TASCA NIVELL 2 PASWORD VALIDATION
+
+        function checkIfPassword(id) {
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+            // Mínim una majúscula
+            // Mínim un número
+            // Mínim 8 caràcters
+            let input = document.getElementById(id);
+
+            if (!passwordRegex.test(input.value)) {
+                document.getElementById(id).classList.add("is-invalid")
+            } else {
+                document.getElementById(id).classList.remove("is-invalid")
+            }
+        }
+
+        // TASCA Nivell 3 
+
+        // function displayInputs{
+
+
+        //     const userData= {
+        //         "email": "",
+        //         "password":""
+        //     }
+
+
+        // }
+        //if ALL of the inputs are NOT invalid, THEN push in EMPTY array
+        //input must be pushed into empty object once validated (onclick)
+        //saved info must be displayed in new Modal
+
+    </script>
+    <!-- 
+
+
+
+
+-->
+</body>
+
+</html>
