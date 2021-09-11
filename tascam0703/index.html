@@ -114,7 +114,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="registerPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="registerPassword">
+                                <input type="password" class="form-control" id="registerPassword" value="Password8">
                                 <div class="invalid-feedback">
                                     Choose a password with min. 8 characters with at least 1 uppercase, 1 lowercase & 1
                                     number
@@ -122,7 +122,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="repeatPassword" class="form-label">Repeat Password</label>
-                                <input type="password" class="form-control" id="repeatPassword">
+                                <input type="password" class="form-control" id="repeatPassword" value="Password8">
                                 <div class="invalid-feedback">
                                     The password does not match
                                 </div>
@@ -132,8 +132,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            id="registerButton">Register</button>
+                        <button type="button" class="btn btn-primary" id="registerButton">Register</button>
                     </div>
                 </div>
             </div>
@@ -148,7 +147,26 @@
                         <h5 class="modal-title">Campos validados correctamente</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="RegistrationData">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL SUCCESS LOGIN -->
+
+        <div class="modal" tabindex="-1" id="successfulLogin">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ya estás dentro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="loginData">
 
                     </div>
                     <div class="modal-footer">
@@ -160,6 +178,8 @@
 
     </div>
     <script>
+
+        let user = {}
 
         document.getElementById("loginButton").addEventListener("click", function () {
 
@@ -178,24 +198,39 @@
             checkIfEmpty("repeatPassword")
             checkIfEmail("registerEmail")
             checkIfPassword("registerPassword")
+            comparePassword("registerPassword", "repeatPassword");
 
+            // TASCA Nivell 3
 
-            function validatePassword() {
-                let password = document.getElementById("registerPassword").value;
-                let confirmPassword = document.getElementById("repeatPassword").value;
+            //if ALL of the inputs are NOT invalid, THEN push in EMPTY array
+            //input must be pushed into empty object once validated (onclick)
+            //saved info must be displayed in new Modal
 
-                if (password != confirmPassword) {
-                    document.getElementById("repeatPassword").classList.add("is-invalid")
+            if (!document.querySelector("form .is-invalid")) {
+                // HIDE CURRENT MODAL
+                const registerModal = document.querySelector('#ModalRegister');
+                const modalReg = bootstrap.Modal.getInstance(registerModal);
+                modalReg.hide();
 
-                } else if (password === confirmPassword) {
-                    document.getElementById("repeatPassword").classList.remove("is-invalid")
-
-                }
+                // SHOW NEW MODAL
+                var succRegist = new bootstrap.Modal(document.getElementById('sucessfulRegistration'))
+                succRegist.show()
             }
 
-            validatePassword();
+            // create object and display in modal
+
+            const password = document.getElementById("registerPassword").value
+            const email = document.getElementById("registerEmail").value
+            const name = document.getElementById("registerName").value
+
+
+            user = { email, password, name }
+            document.getElementById("RegistrationData").innerHTML =
+                `<p>Email: ${user.email}</p>
+            <p>Password: ${user.password}</p>`
         });
 
+        // checks if input field is empty
         function checkIfEmpty(id) {
 
             let input = document.getElementById(id)
@@ -207,6 +242,8 @@
             }
 
         };
+
+        //checks if it is a valid email acording to some rules
 
         function checkIfEmail(id) {
             // type regex, not string
@@ -222,8 +259,25 @@
 
         }
 
-        // TASCA NIVELL 2 PASWORD VALIDATION
+        //  compares password with repeat password
 
+        function comparePassword(id1, id2) {
+            let password = document.getElementById(id1).value;
+            let confirmPassword = document.getElementById(id2).value;
+
+            if (password != confirmPassword) {
+                document.getElementById(id2).classList.add("is-invalid")
+
+            } else {
+                document.getElementById(id2).classList.remove("is-invalid")
+
+            }
+        }
+
+
+        // TASCA NIVELL 2 
+
+        // Checks if passwords adjusts to specific requirements
         function checkIfPassword(id) {
             const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
             // Mínim una majúscula
@@ -238,50 +292,33 @@
             }
         }
 
-        // TASCA Nivell 3
+        // LOG IN BUTTON EVENT LISTENER
 
-        document.getElementById("registerButton").addEventListener("click", function () {
-            let savedEmail = [];
-            let savedPassword = [];
+        document.getElementById("loginButton").addEventListener("click", function () {
 
-            const password = document.getElementById("registerPassword").value
-            const email = document.getElementById("registerEmail").value
+            let useremail = document.getElementById("loginEmail").value;
+            let userpassword = document.getElementById("loginPassword").value;
+            console.log(useremail)
 
-            if (!document.querySelector("form .is-invalid")) {
-                savedEmail.push(email)
-                savedPassword.push(password)
+            if (useremail === user.email && userpassword === user.password) {
 
                 // HIDE CURRENT MODAL
-                const registerModal = document.querySelector('#ModalRegister');
-                const modalReg = bootstrap.Modal.getInstance(registerModal);
-                modalReg.hide();
+                const modalLoginElement = bootstrap.Modal.getInstance(document.querySelector('#ModalLogin'));
+                modalLoginElement.hide()
 
                 // SHOW NEW MODAL
-                var myModal = new bootstrap.Modal(document.getElementById('sucessfulRegistration'), {
-                    keyboard: false
-                })
-                var modalToggle = document.getElementById('sucessfulRegistration') // relatedTarget
-                myModal.show(modalToggle)
+                const successlogin = new bootstrap.Modal(document.getElementById('successfulLogin'))
+                successlogin.show()
             }
 
-            console.log(savedEmail)
-            console.log(savedPassword)
+            document.getElementById("loginData").innerHTML =
+                `<p> Bienvenid@ : ${user.name}</p>`
+
         });
 
 
-
-        //if ALL of the inputs are NOT invalid, THEN push in EMPTY array
-        //input must be pushed into empty object once validated (onclick)
-        //saved info must be displayed in new Modal
-        //info must be remembered for login
-
     </script>
-    <!-- 
 
-
-
-
--->
 </body>
 
 </html>
