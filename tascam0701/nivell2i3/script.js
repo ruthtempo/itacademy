@@ -1,4 +1,4 @@
-
+// funcio calculadora
 function calcular(operador, valor1, valor2){
     if (operador === "-"){
         return valor1 - valor2;
@@ -13,9 +13,11 @@ function calcular(operador, valor1, valor2){
     }
 }
 
-var resultat = calcular('-',40,20);
+var resultado = calcular('-',40,20);
 
-console.log(resultat)
+console.log(resultado)
+
+// calculadora completa
 
 function checkIfOperator(label){
     if(label=== "+" || label === "-" || label==="x" || label=== "/" ){
@@ -40,6 +42,7 @@ function checkIfNumber(label){
 }
 
 let value1, operator, value2;
+let resultat 
 
 document.addEventListener("click", function(event){
     // console.log(event, label);
@@ -69,18 +72,37 @@ document.addEventListener("click", function(event){
         if(checkIfNumber(label)){
             value2= parseInt(label)
             document.getElementById("input").value = value2
+           
         }
         
     // result
-    }else{
-        if(label === "="){
-            resultat= calcular(operator, value1, value2)
+    }else if(label === "="){
+        if(operator ==="/" && value2 === 0){
+            document.getElementById("input").value = "error"
+            value2=undefined
+        }else{
+            resultat = calcular(operator, value1, value2)
             document.getElementById("input").value = resultat
         }
-        
     }
+
+    // when there is a result in calcultor and I click a number, 
+    // it starts a new calculation and it gets saved to value 1
+        
     console.log("value1:", value1)
     console.log("operator:", operator)
     console.log("value2:", value2)
     console.log("resultat:", resultat)
+
+    if(resultat && checkIfNumber(label)){
+        value1= parseInt(label);
+        value2=undefined;
+        resultat=undefined;
+    }
+
+    if(resultat && checkIfOperator(label)){
+        value1= resultat;
+        value2=undefined;
+        resultat=undefined; 
+    }
 });
