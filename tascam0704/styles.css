@@ -1,0 +1,35 @@
+
+body{
+  height:100vh;
+}
+
+#icons{
+  direction: rtl;
+}
+
+.heart{
+  color:yellow;
+}
+
+.heart:hover{
+  color:pink;
+  cursor:pointer;
+}
+
+.heart:hover ~ .heart {
+ color:pink;
+}
+
+.active{
+  color:palevioletred;
+}
+
+.active ~ .heart{
+  color:palevioletred
+ }
+
+
+
+
+
+
