@@ -62,6 +62,12 @@ class Product {
 }
 
 document.getElementById("saveProduct").addEventListener("click", function() {
+
+    checkIfEmpty("productName")
+    checkIfEmpty("productPrice")
+    checkIfEmpty("productYear")
+
+    
     const productName = document.getElementById("productName").value ;
     const productPrice = document.getElementById("productPrice").value ;
     const productYear = document.getElementById("productYear").value ;
@@ -93,11 +99,7 @@ function checkIfEmpty(id) {
 
 };
 
-document.getElementById("saveProduct").addEventListener("click", function () {
-    checkIfEmpty("productName")
-    checkIfEmpty("productPrice")
-    checkIfEmpty("productYear")
-});
+
 
 // falta crear condició: quan cap sigui invalid es crea l'objecte
     
