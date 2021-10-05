@@ -14,7 +14,9 @@ const url = "http://api.icndb.com/jokes/random"
 // WITH FETCH PROMISE
 
 document.getElementById("getquote").addEventListener("click", ()=>{
-    fetch(url).then(response =>response.json()).then(response=>{
+    fetch(url)
+    .then(response =>response.json())
+    .then(response=>{
         let previousQuote = document.getElementById("quote")
         previousQuote.innerHTML = response.value.joke
 
